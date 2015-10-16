@@ -21,7 +21,7 @@ _Note: The script are compatible with all GNU/Linux distributions._
   * **Commands to install:**
 
     * `$ ffmpeg-install --install (Latest git version)`
-    * `$ ffmpeg-install --update release (Latest stable version)`
+    * `$ ffmpeg-install --install release (Latest stable version)`
   
   * **Commands to update:**
 
