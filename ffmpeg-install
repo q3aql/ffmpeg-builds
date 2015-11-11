@@ -5,9 +5,9 @@
 # Created by clamsawd (clamsawd@openmailbox.org)
 # Builds by John Van Sickle (john.vansickle@gmail.com)
 # Licensed by GPL v.2
-# Date: 16-10-2015
+# Date: 11-11-2015
 # --------------------------------------
-VERSION=1.0
+VERSION=1.1
 
 URL=http://johnvansickle.com/ffmpeg/
 URL_RELEASES=http://johnvansickle.com/ffmpeg/releases/
@@ -89,7 +89,7 @@ case $1 in
      cd $TMP_DIR
      rm -rf ffmpeg-*
      if [ "$2" == "release" ] ; then
-       curl $URL | grep "$URL_RELEASES" | cut -d '"' -f 2 | grep "$ARCH" > $TMP_DIR/ffmpeg-url
+       curl $URL | grep "$URL_RELEASES" | cut -d '"' -f 2 | grep "$ARCH" | head -1 > $TMP_DIR/ffmpeg-url
         if [ "$?" -eq 0 ] ; then
             echo "OK" > /dev/null
         else
@@ -98,7 +98,7 @@ case $1 in
             exit
         fi
      else
-       curl $URL | grep "$URL_BUILDS" | cut -d '"' -f 2 | grep "$ARCH" > $TMP_DIR/ffmpeg-url
+       curl $URL | grep "$URL_BUILDS" | cut -d '"' -f 2 | grep "$ARCH" | head -1 > $TMP_DIR/ffmpeg-url
         if [ "$?" -eq 0 ] ; then
             echo "OK" > /dev/null
         else
@@ -109,6 +109,8 @@ case $1 in
      fi
       URL_PACKAGE=`cat $TMP_DIR/ffmpeg-url`
       NAME_PACKAGE=`cat /tmp/ffmpeg-url | cut -d "/" -f 6`
+      clear
+      echo "Downloading $NAME_PACKAGE ($APP_DOWNLOAD)"
       $APP_DOWNLOAD $URL_PACKAGE
       if [ "$?" -eq 0 ] ; then
          echo "OK" > /dev/null
