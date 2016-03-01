@@ -1,7 +1,7 @@
 FFmpeg (Latest Git/Stable Static Builds) for GNU/Linux
 ======================================================
 
-    Script:    clamsawd (clamsawd@openmailbox.org)
+    Script:    q3aql (q3aql@openmailbox.org)
     Builds:    John Van Sickle (john.vansickle@gmail.com)
 
 ### How to install (ffmpeg-install):
@@ -9,7 +9,7 @@ FFmpeg (Latest Git/Stable Static Builds) for GNU/Linux
   * **Instructions:**
   
     * Open the terminal.
-    * Clone the repository: `git clone https://github.com/clamsawd/ffmpeg-install.git`
+    * Clone the repository: `git clone https://github.com/q3aql/ffmpeg-install.git`
     * Change directory: `cd ffmpeg-install`
     * Copy the script to `$PATH` (as root): `cp -rf ffmpeg-install /usr/bin/`
     * Change the permissions (as root): `chmod +x /usr/bin/ffmpeg-install`
