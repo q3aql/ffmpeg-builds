@@ -5,9 +5,9 @@
 # Created by q3aql (q3aql@openmailbox.org)
 # Builds by John Van Sickle (john.vansickle@gmail.com)
 # Licensed by GPL v.2
-# Date: 01-03-2016
+# Date: 03-03-2016
 # --------------------------------------
-VERSION=1.1
+VERSION=1.1.1
 
 URL=http://johnvansickle.com/ffmpeg/
 URL_RELEASES=http://johnvansickle.com/ffmpeg/releases/
@@ -60,6 +60,7 @@ esac
   wget --help > /dev/null
   if [ "$?" -eq 0 ] ; then
     APP_DOWNLOAD='wget -c'
+    NAME_APP_DOWNLOAD="wget"
   else
     echo "wget disabled"
   fi
@@ -67,6 +68,7 @@ esac
   axel --help > /dev/null
   if [ "$?" -eq 0 ] ; then
     APP_DOWNLOAD='axel'
+    NAME_APP_DOWNLOAD="axel"
   else
     echo "axel disabled"
   fi
@@ -74,6 +76,7 @@ esac
   aria2c --help > /dev/null
   if [ "$?" -eq 0 ] ; then
     APP_DOWNLOAD='aria2c --check-certificate=false'
+    NAME_APP_DOWNLOAD="aria2c"
   else
     echo "aria2c disabled"
   fi
@@ -110,7 +113,7 @@ case $1 in
       URL_PACKAGE=`cat $TMP_DIR/ffmpeg-url`
       NAME_PACKAGE=`cat /tmp/ffmpeg-url | cut -d "/" -f 6`
       clear
-      echo "Downloading $NAME_PACKAGE ($APP_DOWNLOAD)"
+      echo "Downloading $NAME_PACKAGE ($NAME_APP_DOWNLOAD)"
       $APP_DOWNLOAD $URL_PACKAGE
       if [ "$?" -eq 0 ] ; then
          echo "OK" > /dev/null
