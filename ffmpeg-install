@@ -1,17 +1,17 @@
 #!/bin/bash
 
 # Script to install FFmpeg on GNU/Linux
-# Website: http://johnvansickle.com/ffmpeg/
+# Website: https://www.johnvansickle.com/ffmpeg/
 # Created by q3aql (q3aql@openmailbox.org)
 # Builds by John Van Sickle (john.vansickle@gmail.com)
 # Licensed by GPL v.2
-# Date: 03-03-2016
+# Date: 02-10-2016
 # --------------------------------------
-VERSION=1.1.1
+VERSION=1.2
 
-URL=http://johnvansickle.com/ffmpeg/
-URL_RELEASES=http://johnvansickle.com/ffmpeg/releases/
-URL_BUILDS=http://johnvansickle.com/ffmpeg/builds/
+URL=https://www.johnvansickle.com/ffmpeg/
+URL_RELEASES=https://johnvansickle.com/ffmpeg/releases/
+URL_BUILDS=https://johnvansickle.com/ffmpeg/builds/
 TMP_DIR=/tmp
 PATH_INSTALL=/usr/bin/
 
