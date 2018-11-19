@@ -36,6 +36,12 @@ _Note: The script are compatible with all GNU/Linux distributions._
   
     * `$ ffmpeg-install --help`
     
+### The fastest way to install 
+
+    1：wget https://raw.githubusercontent.com/MRDHR/ffmpeg-install/master/ffmpeg-install
+	2：chmod a+x ffmpeg-install
+	3：./ffmpeg-install --install release
+    
 ### External links:
 
   * [FFmpeg official website](https://www.ffmpeg.org/)
