@@ -38,10 +38,10 @@ fi
 archs=`uname -m`
 case "$archs" in
     i?86)
-         ARCH=32bit
+         ARCH=i686
     ;;
     x86_64)
-         ARCH=64bit
+         ARCH=amd64
     ;;
     *)
     echo "Unsupported Arquitecture ($archs)"
@@ -127,7 +127,6 @@ case $1 in
       cp -rf ffmpeg $PATH_INSTALL
       cp -rf ffmpeg-10bit $PATH_INSTALL
       cp -rf ffprobe $PATH_INSTALL
-      cp -rf ffserver $PATH_INSTALL
       cd ..
       rm -rf ffmpeg-*
       echo "Done!"
