@@ -7,7 +7,7 @@
 # Licensed by GPL v.2
 # Date: 02-10-2016
 # --------------------------------------
-VERSION=1.2
+VERSION=1.2.1
 
 URL=https://www.johnvansickle.com/ffmpeg/
 URL_RELEASES=https://johnvansickle.com/ffmpeg/releases/
@@ -123,9 +123,9 @@ case $1 in
          exit
       fi
       tar Jxvf $NAME_PACKAGE
+      rm -f ffmpeg-url ffmpeg*xz
       cd ffmpeg-*
       cp -rf ffmpeg $PATH_INSTALL
-      cp -rf ffmpeg-10bit $PATH_INSTALL
       cp -rf ffprobe $PATH_INSTALL
       cd ..
       rm -rf ffmpeg-*
