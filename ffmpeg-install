@@ -2,10 +2,10 @@
 
 # Script to install FFmpeg on GNU/Linux
 # Website: https://www.johnvansickle.com/ffmpeg/
-# Created by q3aql (q3aql@openmailbox.org)
+# Created by q3aql (q3aql@protonmail.ch)
 # Builds by John Van Sickle (john.vansickle@gmail.com)
 # Licensed by GPL v.2
-# Date: 02-10-2016
+# Date: 22-03-2019
 # --------------------------------------
 VERSION=1.2.1
 
