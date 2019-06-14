@@ -125,7 +125,7 @@ case $1 in
       tar Jxvf $NAME_PACKAGE
       cd ffmpeg-*
       cp -rf ffmpeg $PATH_INSTALL
-      cp -rf ffmpeg-10bit $PATH_INSTALL
+      #cp -rf ffmpeg-10bit $PATH_INSTALL
       cp -rf ffprobe $PATH_INSTALL
       cd ..
       rm -rf ffmpeg-*
