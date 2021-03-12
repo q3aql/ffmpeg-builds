@@ -6,12 +6,12 @@ FFmpeg (Latest Git/Stable Static Builds) for GNU/Linux
 
 ### Sintax:
 
-* `$ ffmpeg-install --install         --> Install FFmpeg (Git version)`
-* `$ ffmpeg-install --install release --> Install FFmpeg (Stable version)`
-* `$ ffmpeg-install --update          --> Update FFmpeg (Git version)`
-* `$ ffmpeg-install --update release  --> Update FFmpeg (Stable version)`
-* `$ ffmpeg-install --uninstall       --> Uninstall FFmpeg previously installed`
-* `$ ffmpeg-install --help            --> Show help`
+* `$ ffmpeg-install --install`         --> Install FFmpeg (Git version)
+* `$ ffmpeg-install --install release` --> Install FFmpeg (Stable version)
+* `$ ffmpeg-install --update`          --> Update FFmpeg (Git version)
+* `$ ffmpeg-install --update release`  --> Update FFmpeg (Stable version)
+* `$ ffmpeg-install --uninstall`       --> Uninstall FFmpeg previously installed
+* `$ ffmpeg-install --help`            --> Show help
 
 ### Installation:
 
