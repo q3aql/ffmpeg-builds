@@ -6,15 +6,15 @@
 # Created by q3aql (q3aql@protonmail.ch)               #
 # Builds by John Van Sickle (john.vansickle@gmail.com) #
 # Licensed by GPL v2.0                                 #
-# Date: 12-03-2021                                     #
+# Date: 27-03-2021                                     #
 ########################################################
 VERSION="v2.0"
-M_DATE="100321"
+M_DATE="270321"
 
 # Variables
-URL=https://www.johnvansickle.com/ffmpeg/
-URL_RELEASES=https://johnvansickle.com/ffmpeg/releases/
-URL_BUILDS=https://johnvansickle.com/ffmpeg/builds/
+URL="https://www.johnvansickle.com/ffmpeg/"
+URL_RELEASES="https://johnvansickle.com/ffmpeg/releases/"
+URL_BUILDS="https://johnvansickle.com/ffmpeg/builds/"
 TMP_DIR=/tmp
 PATH_INSTALL=/usr/bin/
 # Downloader
@@ -55,8 +55,8 @@ function kernelCheck() {
 
 # Function to detect "arch" system.
 function archCheck() {
-  archs=`uname -m`
-  case "$archs" in
+  archs=$(uname -m)
+  case "${archs}" in
     i?86)
       ARCH=i686
     ;;
@@ -67,7 +67,7 @@ function archCheck() {
     echo ""
     echo "* ffmpeg-install ${VERSION} (${M_DATE}) (GPL v2.0)"
     echo ""
-    echo "+ Unsupported Arquitecture ($archs)"
+    echo "+ Unsupported Arquitecture (${archs})"
     echo ""
     exit
   esac
