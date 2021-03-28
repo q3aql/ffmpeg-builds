@@ -21,7 +21,7 @@ Script to install FFmpeg (Git/Stable) on GNU/Linux.
   ```shell
   $ git clone https://github.com/q3aql/ffmpeg-install
   $ cd ffmpeg-install
-  $ make install
+  $ sudo make install
   ````
 
 ### External links:
