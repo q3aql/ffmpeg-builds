@@ -4,7 +4,7 @@ Script to install FFmpeg (Git/Stable) on GNU/Linux.
     Script:    q3aql (q3aql@protonmail.ch)
     Builds:    John Van Sickle (john.vansickle@gmail.com)
 
-### Sintax:
+### Syntax:
 
   ```shell
   $ ffmpeg-install --install         --> Install FFmpeg (Git version)
