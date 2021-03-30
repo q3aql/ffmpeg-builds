@@ -193,7 +193,7 @@ case ${1} in
     echo "* Script: q3aql (q3aql@protonmail.ch)"
     echo "* Builds: John Van Sickle (john.vansickle@gmail.com)"
     echo ""
-    echo "+ Sintax:"
+    echo "+ Syntax:"
     echo ""
     echo " $ ffmpeg-install --install         --> Install FFmpeg (Git version)"
     echo " $ ffmpeg-install --install release --> Install FFmpeg (Stable version)"
