@@ -15,6 +15,8 @@
 #  - make
 #  - meson/ninja
 #  - gperf
+#  - autoconf
+#  - libtool
 
 # Build variables
 dir_build="/opt/ffmpeg-builds/build/linux64"
@@ -43,6 +45,9 @@ CXX_COMPILER="g++"
 # URL Libraries Variables
 lib_zlib="http://sourceforge.net/projects/libpng/files/zlib/1.2.11/zlib-1.2.11.tar.gz"
 lib_zlib_name="zlib-1.2.11.tar.gz@zlib-1.2.11"
+
+lib_expat="https://github.com/libexpat/libexpat/releases/download/R_2_4_1/expat-2.4.1.tar.bz2"
+lib_expat_name="expat-2.4.1.tar.bz2@expat-2.4.1"
 
 lib_fontconfig="https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.13.94.tar.gz"
 lib_fontconfig_name="fontconfig-2.13.94.tar.gz@fontconfig-2.13.94"
@@ -144,6 +149,22 @@ else
   tar zxvf ${name_package}
   cd "${name_folder}"
   PKG_CONFIG_PATH=${dir_build_libs}/lib/pkgconfig/ LD_LIBRARY_PATH=${dir_build_libs}/lib/ CC="${C_COMPILER}" CXX="${CXX_COMPILER}" ./configure --prefix=${dir_build_libs} --static
+  make
+  make install
+fi
+
+# Build expat
+if [ -f ${dir_build_libs}/lib/pkgconfig/expat.pc ] ; then
+  echo "* Expat was compiled previosly"
+  sleep 1
+else
+  cd ${dir_build_libs}
+  name_package=$(echo ${lib_expat_name} | cut -d "@" -f 1)
+  name_folder=$(echo ${lib_expat_name} | cut -d "@" -f 2)
+  wget -c "${lib_expat}"
+  tar jxvf ${name_package}
+  cd "${name_folder}"
+  PKG_CONFIG_PATH=${dir_build_libs}/lib/pkgconfig/ LD_LIBRARY_PATH=${dir_build_libs}/lib/ CC="${C_COMPILER}" CXX="${CXX_COMPILER}" ./configure --prefix=${dir_build_libs} --enable-static --enable-shared
   make
   make install
 fi
