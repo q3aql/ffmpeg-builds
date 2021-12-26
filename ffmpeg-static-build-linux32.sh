@@ -164,7 +164,7 @@ else
   wget -c "${lib_expat}"
   tar jxvf ${name_package}
   cd "${name_folder}"
-  PKG_CONFIG_PATH=${dir_build_libs}/lib/pkgconfig/ LD_LIBRARY_PATH=${dir_build_libs}/lib/ CC="${C_COMPILER}" CXX="${CXX_COMPILER}" ./configure --prefix=${dir_build_libs} --enable-static --enable-shared
+  PKG_CONFIG_PATH=${dir_build_libs}/lib/pkgconfig/ LD_LIBRARY_PATH=${dir_build_libs}/lib/ CC="${C_COMPILER}" CXX="${CXX_COMPILER}" ./configure --prefix=${dir_build_libs} --enable-static --enable-shared --without-docbook
   make
   make install
 fi
