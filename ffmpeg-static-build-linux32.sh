@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###########################################
-# Script for build FFmpeg on Linux x86_64 #
+# Script for build FFmpeg on Linux x86    #
 # Author: q3aql                           #
 # Contact: q3aql@duck.com                 #
 ###########################################
@@ -17,8 +17,8 @@
 #  - gperf
 
 # Build variables
-dir_build="/opt/ffmpeg-builds/build/linux64"
-dir_build_libs="/opt/ffmpeg-builds/lib/linux64"
+dir_build="/opt/ffmpeg-builds/build/linux32"
+dir_build_libs="/opt/ffmpeg-builds/lib/linux32"
 dir_build_packages="/opt/ffmpeg-builds/packages"
 
 # FFmpeg version
@@ -179,7 +179,7 @@ else
   wget -c "${lib_openssl}"
   tar zxvf ${name_package}
   cd "${name_folder}"
-  PKG_CONFIG_PATH=${dir_build_libs}/lib/pkgconfig/ LD_LIBRARY_PATH=${dir_build_libs}/lib/ CC="${C_COMPILER}" CXX="${CXX_COMPILER}" ./Configure --prefix=${dir_build_libs} linux-x86_64 shared
+  PKG_CONFIG_PATH=${dir_build_libs}/lib/pkgconfig/ LD_LIBRARY_PATH=${dir_build_libs}/lib/ CC="${C_COMPILER}" CXX="${CXX_COMPILER}" ./Configure --prefix=${dir_build_libs} linux-elf shared
   make
   make install
 fi
@@ -612,11 +612,11 @@ rm -rfv ${name_folder}
 # Create package
 echo "* Creating package"
 cd ${dir_build}
-tar jcvf ${name_folder}-linux-gnu-64bit-build.tar.bz2 *
-rm -rf ${dir_build_packages}/${name_folder}-linux-gnu-64bit-build.tar.bz2 
-mv ${name_folder}-linux-gnu-64bit-build.tar.bz2 ${dir_build_packages}
+tar jcvf ${name_folder}-linux-gnu-32bit-build.tar.bz2 *
+rm -rf ${dir_build_packages}/${name_folder}-linux-gnu-32bit-build.tar.bz2 
+mv ${name_folder}-linux-gnu-32bit-build.tar.bz2 ${dir_build_packages}
 echo ""
-echo "* Your build: ${dir_build_packages}/${name_folder}-linux-gnu-64bit-build.tar.bz2"
+echo "* Your build: ${dir_build_packages}/${name_folder}-linux-gnu-32bit-build.tar.bz2"
 echo ""
 chmod 775 -R ${dir_build_packages}
 
