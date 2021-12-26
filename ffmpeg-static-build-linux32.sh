@@ -528,7 +528,7 @@ else
   meson configure -Dprefix="${dir_build_libs}"
   ninja
   ninja install
-  ln -s ${dir_build_libs}/lib/x86_64-linux-gnu/pkgconfig/dav1d.pc ${dir_build_libs}/lib/pkgconfig/dav1d.pc
+  ln -s ${dir_build_libs}/lib/i386-linux-gnu/pkgconfig/dav1d.pc ${dir_build_libs}/lib/pkgconfig/dav1d.pc
 fi
 
 # Build xvid
