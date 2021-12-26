@@ -1,32 +1,39 @@
-Script to install FFmpeg (Git/Stable) on GNU/Linux. 
-===================================================
+FFmpeg static builds for GNU/Linux
+==================================
 
-    Script:    q3aql (q3aql@protonmail.ch)
-    Builds:    John Van Sickle (john.vansickle@gmail.com)
+### FFmpeg 4.4.1 static builds:
 
-### Syntax:
+  * **`GNU/Linux downloads:`**
+  
+    * Generic (All distros):
+    
+      * [ffmpeg-4.4.1-linux-gnu-32bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-32bit-build.tar.bz2)
+      * [ffmpeg-4.4.1-linux-gnu-64bit-build1.tar.bz2](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-64bit-build.tar.bz2)
+     
+     * DEB (Debian Based):
+     
+       * [ffmpeg-4.4.1-linux-gnu-32bit-build.deb](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-32bit-build.deb)
+       * [ffmpeg-4.4.1-linux-gnu-64bit-build.deb](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-64bit-build.deb)
+       
+     * RPM (RedHat Based):
+     
+       * [ffmpeg-4.4.1-linux-gnu-32bit-build.rpm](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-32bit-build.rpm)
+       * [ffmpeg-4.4.1-linux-gnu-64bit-build.rpm](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-64bit-build.rpm)
 
-  ```shell
-  $ ffmpeg-install --install         --> Install FFmpeg (Git version)
-  $ ffmpeg-install --install release --> Install FFmpeg (Stable version)
-  $ ffmpeg-install --update          --> Update FFmpeg (Git version)
-  $ ffmpeg-install --update release  --> Update FFmpeg (Stable version)
-  $ ffmpeg-install --uninstall       --> Uninstall FFmpeg previously installed
-  $ ffmpeg-install --help            --> Show help
-  ````
+### How to install:
 
-### Installation:
+  * **GNU/Linux instructions:**
+  
+    * Open the terminal and type the following command:
+    
+      ```shell
+      $ sudo tar jxvf ffmpeg-4.4.1-linux-gnu-[arch]-build1.tar.bz2 -C /
+      ````
 
-  * Open terminal and type the following commands:
-  ```shell
-  $ git clone https://github.com/q3aql/ffmpeg-install
-  $ cd ffmpeg-install
-  $ sudo make install
-  ````
+### Related links:
 
-### External links:
+  * [FFmpeg homepage](https://ffmpeg.org/)
+  * [FFmpeg Linux builds by John](https://johnvansickle.com/ffmpeg/)
+  * [FFmpeg Win64/Linux64 Builds by Btbn](https://github.com/BtbN/FFmpeg-Builds)
+  * [FFmpeg Win32 Builds](https://github.com/sudo-nautilus/FFmpeg-Builds-Win32)
 
-* [FFmpeg official website](https://www.ffmpeg.org/)
-* [FFmpeg source code](https://www.ffmpeg.org/download.html)
-* [FFmpeg Github](https://github.com/FFmpeg/FFmpeg)
-* [FFmpeg Static Builds](http://johnvansickle.com/ffmpeg/)
