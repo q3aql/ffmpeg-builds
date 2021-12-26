@@ -85,6 +85,9 @@ lib_soxr_name="soxr-0.1.3-Source.tar.xz@soxr-0.1.3-Source"
 lib_speex="http://downloads.us.xiph.org/releases/speex/speex-1.2.0.tar.gz"
 lib_speex_name="speex-1.2.0.tar.gz@speex-1.2.0"
 
+lib_ogg="https://ftp.osuosl.org/pub/xiph/releases/ogg/libogg-1.3.5.tar.gz"
+lib_ogg_name="libogg-1.3.5.tar.gz@libogg-1.3.5"
+
 lib_vorbis="https://downloads.xiph.org/releases/vorbis/libvorbis-1.3.7.tar.gz"
 lib_vorbis_name="libvorbis-1.3.7.tar.gz@libvorbis-1.3.7"
 
@@ -139,7 +142,7 @@ mkdir -p ${dir_build_packages}
 
 # Build zlib
 if [ -f ${dir_build_libs}/lib/pkgconfig/zlib.pc ] ; then
-  echo "* Zlib was compiled previosly"
+  echo "* Zlib was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -155,10 +158,12 @@ fi
 
 # Build expat
 if [ -f ${dir_build_libs}/lib/pkgconfig/expat.pc ] ; then
-  echo "* Expat was compiled previosly"
+  echo "* Expat was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
+  rm -rfv ${name_package}
+  rm -rfv ${name_folder}
   name_package=$(echo ${lib_expat_name} | cut -d "@" -f 1)
   name_folder=$(echo ${lib_expat_name} | cut -d "@" -f 2)
   wget -c "${lib_expat}"
@@ -171,7 +176,7 @@ fi
 
 # Build frei0r
 if [ -d ${dir_build_libs}/lib/frei0r-1 ] ; then
-  echo "* Frei0r was compiled previosly"
+  echo "* Frei0r was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -189,7 +194,7 @@ fi
 
 # Build OpenSSL
 if [ -f ${dir_build_libs}/lib/pkgconfig/libssl.pc ] ; then
-  echo "* OpenSSL was compiled previosly"
+  echo "* OpenSSL was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -207,7 +212,7 @@ fi
 
 # Build Harfbuzz
 if [ -f ${dir_build_libs}/lib/pkgconfig/harfbuzz.pc ] ; then
-  echo "* Harfbuzz was compiled previosly"
+  echo "* Harfbuzz was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -225,7 +230,7 @@ fi
 
 # Build fribidi
 if [ -f ${dir_build_libs}/lib/pkgconfig/fribidi.pc ] ; then
-  echo "* Fribidi was compiled previosly"
+  echo "* Fribidi was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -243,7 +248,7 @@ fi
 
 # Build freetype
 if [ -f ${dir_build_libs}/lib/pkgconfig/freetype2.pc ] ; then
-  echo "* Freetype2 was compiled previosly"
+  echo "* Freetype2 was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -261,7 +266,7 @@ fi
 
 # Build fontconfig
 if [ -f ${dir_build_libs}/lib/pkgconfig/fontconfig.pc ] ; then
-  echo "* Fontconfig was compiled previosly"
+  echo "* Fontconfig was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -279,7 +284,7 @@ fi
 
 # Build ass
 if [ -f ${dir_build_libs}/lib/pkgconfig/libass.pc ] ; then
-  echo "* Ass was compiled previosly"
+  echo "* Ass was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -297,7 +302,7 @@ fi
 
 # Build mp3lame
 if [ -f ${dir_build_libs}/lib/libmp3lame.a ] ; then
-  echo "* MP3Lame was compiled previosly"
+  echo "* MP3Lame was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -315,7 +320,7 @@ fi
 
 # Build fdk-aac
 if [ -f ${dir_build_libs}/lib/pkgconfig/fdk-aac.pc  ] ; then
-  echo "* FDK-AAC was compiled previosly"
+  echo "* FDK-AAC was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -333,7 +338,7 @@ fi
 
 # Build openjpeg
 if [ -f ${dir_build_libs}/lib/pkgconfig/libopenjp2.pc ] ; then
-  echo "* OpenJPEG was compiled previosly"
+  echo "* OpenJPEG was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -351,7 +356,7 @@ fi
 
 # Build soxr
 if [ -f ${dir_build_libs}/lib/pkgconfig/soxr.pc ] ; then
-  echo "* Soxr was compiled previosly"
+  echo "* Soxr was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -369,7 +374,7 @@ fi
 
 # Build speex
 if [ -f ${dir_build_libs}/lib/pkgconfig/speex.pc ] ; then
-  echo "* Speex was compiled previosly"
+  echo "* Speex was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -385,9 +390,27 @@ else
   make install
 fi
 
+# Build ogg
+if [ -f ${dir_build_libs}/lib/pkgconfig/ogg.pc ] ; then
+  echo "* Ogg was compiled previously"
+  sleep 1
+else
+  cd ${dir_build_libs}
+  rm -rfv ${name_package}
+  rm -rfv ${name_folder}
+  name_package=$(echo ${lib_ogg_name} | cut -d "@" -f 1)
+  name_folder=$(echo ${lib_ogg_name} | cut -d "@" -f 2)
+  wget -c "${lib_ogg}"
+  tar zxvf ${name_package}
+  cd "${name_folder}"
+  PKG_CONFIG_PATH=${dir_build_libs}/lib/pkgconfig LD_LIBRARY_PATH=${dir_build_libs}/lib CC="${C_COMPILER}" CXX="${CXX_COMPILER}" ./configure --prefix=${dir_build_libs} --enable-static --disable-shared
+  make
+  make install
+fi
+
 # Build vorbis
 if [ -f ${dir_build_libs}/lib/pkgconfig/vorbis.pc ] ; then
-  echo "* Vorbis was compiled previosly"
+  echo "* Ogg was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -405,7 +428,7 @@ fi
 
 # Build opus
 if [ -f ${dir_build_libs}/lib/pkgconfig/opus.pc ] ; then
-  echo "* Opus was compiled previosly"
+  echo "* Opus was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -423,7 +446,7 @@ fi
 
 # Build theora
 if [ -f ${dir_build_libs}/lib/pkgconfig/theora.pc ] ; then
-  echo "* Theora was compiled previosly"
+  echo "* Theora was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -441,7 +464,7 @@ fi
 
 # Build vid.stab
 if [ -f ${dir_build_libs}/lib/pkgconfig/vidstab.pc ] ; then
-  echo "* Vid.Stab was compiled previosly"
+  echo "* Vid.Stab was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -459,7 +482,7 @@ fi
 
 # Build vpx
 if [ -f ${dir_build_libs}/lib/pkgconfig/vpx.pc ] ; then
-  echo "* Vpx was compiled previosly"
+  echo "* Vpx was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -477,7 +500,7 @@ fi
 
 # Build webp
 if [ -f ${dir_build_libs}/lib/pkgconfig/libwebp.pc ] ; then
-  echo "* Webp was compiled previosly"
+  echo "* Webp was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -496,7 +519,7 @@ fi
 
 # Build x264
 if [ -f ${dir_build_libs}/lib/pkgconfig/x264.pc ] ; then
-  echo "* x264 was compiled previosly"
+  echo "* x264 was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -513,7 +536,7 @@ fi
 
 # Build x265
 if [ -f ${dir_build_libs}/lib/pkgconfig/x265.pc ] ; then
-  echo "* x265 was compiled previosly"
+  echo "* x265 was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -533,7 +556,7 @@ fi
 
 # Build dav1d
 if [ -f ${dir_build_libs}/lib/pkgconfig/dav1d.pc ] ; then
-  echo "* Dav1d was compiled previosly"
+  echo "* Dav1d was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -554,7 +577,7 @@ fi
 
 # Build xvid
 if [ -f ${dir_build_libs}/lib/libxvidcore.a ] ; then
-  echo "* Xvid was compiled previosly"
+  echo "* Xvid was compiled previously"
   sleep 1
 else
   cd ${dir_build_libs}
@@ -572,7 +595,7 @@ fi
 
 # Build aom
 if [ -f ${dir_build_libs}/lib/pkgconfig/aom.pc ] ; then
-  echo "* Aom was compiled previosly"
+  echo "* Aom was compiled previously"
   rm -rfv ${name_package}
   rm -rfv ${name_folder}
   sleep 1
@@ -617,7 +640,7 @@ else
   echo "   - vidstab"
   echo ""
   sleep 5
-PKG_CONFIG_PATH=${dir_build_libs}/lib/pkgconfig LD_LIBRARY_PATH=${dir_build_libs}/lib CC="${C_COMPILER}" CXX="${CXX_COMPILER}" ./configure --prefix="${dir_build}/usr" --extra-ldexeflags="-static" --pkg-config-flags="--static" --extra-cflags="-I${dir_build_libs}/include" --extra-ldflags="-L${dir_build_libs}/lib" --extra-libs="-lpthread -lm -lz" --extra-ldexeflags="-static" --enable-gpl --enable-nonfree --enable-version3 --disable-debug --disable-indev=sndio --disable-outdev=sndio --enable-fontconfig --enable-frei0r --enable-openssl --enable-libaom --enable-libfribidi --enable-libass --enable-libfreetype --enable-libmp3lame --enable-libopenjpeg --enable-libsoxr --enable-libspeex --enable-libvorbis --enable-libopus --enable-libtheora --disable-libvidstab --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libdav1d --enable-libxvid --enable-libfdk-aac --enable-ffplay --enable-pic
+  PKG_CONFIG_PATH=${dir_build_libs}/lib/pkgconfig LD_LIBRARY_PATH=${dir_build_libs}/lib CC="${C_COMPILER}" CXX="${CXX_COMPILER}" ./configure --prefix="${dir_build}/usr" --extra-ldexeflags="-static" --pkg-config-flags="--static" --extra-cflags="-I${dir_build_libs}/include" --extra-ldflags="-L${dir_build_libs}/lib" --extra-libs="-lpthread -lm -lz" --extra-ldexeflags="-static" --enable-gpl --enable-nonfree --enable-version3 --disable-debug --disable-indev=sndio --disable-outdev=sndio --enable-fontconfig --enable-frei0r --enable-openssl --enable-libaom --enable-libfribidi --enable-libass --enable-libfreetype --enable-libmp3lame --enable-libopenjpeg --enable-libsoxr --enable-libspeex --enable-libvorbis --enable-libopus --enable-libtheora --disable-libvidstab --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libdav1d --enable-libxvid --enable-libfdk-aac --enable-ffplay --enable-pic
 fi
 sleep 2
 make
