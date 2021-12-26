@@ -8,7 +8,7 @@ FFmpeg static builds for GNU/Linux
     * Generic (All distros):
     
       * [ffmpeg-4.4.1-linux-gnu-32bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-32bit-build.tar.bz2)
-      * [ffmpeg-4.4.1-linux-gnu-64bit-build1.tar.bz2](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-64bit-build.tar.bz2)
+      * [ffmpeg-4.4.1-linux-gnu-64bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-64bit-build.tar.bz2)
      
      * DEB (Debian Based):
      
