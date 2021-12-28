@@ -59,8 +59,8 @@ if [ -f "/usr/bin/apt-cyg" ] ; then
   sleep 1
 else
   cd /tmp
-  git clone "https://github.com/transcode-open/apt-cyg"
-  cd apt-cyg/
+  git clone "https://github.com/q3aql/ffmpeg-builds"
+  cd ffmpeg-builds
   cp -rfv apt-cyg /usr/bin
   echo "* apt-cyg installed"
 fi
@@ -70,8 +70,8 @@ if [ -f /usr/include/w32api/strsafe.h_fix ] ; then
   echo "* strsafe.h was fixed previously"
 else
   cd /tmp
-  git clone "https://github.com/q3aql/ffmpeg-static-builds"
-  cd ffmpeg-static-builds
+  git clone "https://github.com/q3aql/ffmpeg-builds"
+  cd ffmpeg-builds
   cp -rfv /usr/include/w32api/strsafe.h /usr/include/w32api/strsafe.h.bck
   cp -rfv cygwin_fix_strsafe.h /usr/include/w32api/strsafe.h
   cp -rfv cygwin_fix_strsafe.h /usr/include/w32api/strsafe.h_fix
