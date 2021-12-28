@@ -1,24 +1,29 @@
-FFmpeg static builds for GNU/Linux
-==================================
+FFmpeg builds for GNU/Linux & Windows (with Cygwin) 
+===================================================
 
-### FFmpeg 4.4.1 static builds:
+### FFmpeg 4.4.1 Builds:
 
-  * **`GNU/Linux downloads:`**
+  * **`GNU/Linux downloads (Static):`**
   
     * Generic (All distros):
     
-      * [ffmpeg-4.4.1-linux-gnu-32bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-32bit-build.tar.bz2)
-      * [ffmpeg-4.4.1-linux-gnu-64bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-64bit-build.tar.bz2)
+      * [ffmpeg-4.4.1-linux-gnu-32bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-32bit-build.tar.bz2)
+      * [ffmpeg-4.4.1-linux-gnu-64bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-64bit-build.tar.bz2)
      
      * DEB (Debian Based):
      
-       * [ffmpeg-4.4.1-linux-gnu-32bit-build.deb](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-32bit-build.deb)
-       * [ffmpeg-4.4.1-linux-gnu-64bit-build.deb](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-64bit-build.deb)
+       * [ffmpeg-4.4.1-linux-gnu-32bit-build.deb](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-32bit-build.deb)
+       * [ffmpeg-4.4.1-linux-gnu-64bit-build.deb](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-64bit-build.deb)
        
      * RPM (RedHat Based):
      
-       * [ffmpeg-4.4.1-linux-gnu-32bit-build.rpm](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-32bit-build.rpm)
-       * [ffmpeg-4.4.1-linux-gnu-64bit-build.rpm](https://github.com/q3aql/ffmpeg-static-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-64bit-build.rpm)
+       * [ffmpeg-4.4.1-linux-gnu-32bit-build.rpm](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-32bit-build.rpm)
+       * [ffmpeg-4.4.1-linux-gnu-64bit-build.rpm](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-64bit-build.rpm)
+       
+  * **`Windows downloads (with Cygwin):`**
+  
+    * [ffmpeg-4.4.1-win-32bit-build-cygwin.zip](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-win-32bit-build-cygwin.zip)
+    * [[ffmpeg-4.4.1-win-64bit-build-cygwin.zip](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-win-64bit-build-cygwin.zip)
 
 ### How to install:
 
@@ -29,6 +34,12 @@ FFmpeg static builds for GNU/Linux
       ```shell
       $ sudo tar jxvf ffmpeg-4.4.1-linux-gnu-[arch]-build1.tar.bz2 -C /
       ````
+      
+  * **Windows instructions:**
+  
+    * Unzip the package with [7-zip](http://www.7-zip.org/) or [Winrar](http://www.rarlab.com/).
+    * Copy the files to a folder. For example: `C:\Program Files\FFmpeg`
+    * Add the folder to [PATH](https://www.google.es/search?q=add+folder+to+PATH+on+Windows) variable.
 
 ### Related links:
 
