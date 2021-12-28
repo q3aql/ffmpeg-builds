@@ -23,7 +23,7 @@ FFmpeg builds for GNU/Linux & Windows (with Cygwin)
   * **`Windows downloads (with Cygwin):`**
   
     * [ffmpeg-4.4.1-win-32bit-build-cygwin.zip](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-win-32bit-build-cygwin.zip)
-    * [[ffmpeg-4.4.1-win-64bit-build-cygwin.zip](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-win-64bit-build-cygwin.zip)
+    * [ffmpeg-4.4.1-win-64bit-build-cygwin.zip](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-win-64bit-build-cygwin.zip)
 
 ### How to install:
 
