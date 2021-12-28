@@ -32,14 +32,14 @@ FFmpeg builds for GNU/Linux & Windows (with Cygwin)
     * Open the terminal and type the following command:
     
       ```shell
-      $ sudo tar jxvf ffmpeg-4.4.1-linux-gnu-[arch]-build1.tar.bz2 -C /
+      $ sudo tar jxvf ffmpeg-4.4.1-linux-gnu-[arch]-build.tar.bz2 -C /
       ````
       
   * **Windows instructions:**
   
     * Unzip the package with [7-zip](http://www.7-zip.org/) or [Winrar](http://www.rarlab.com/).
     * Copy the files to a folder. For example: `C:\Program Files\FFmpeg`
-    * Add the folder to [PATH](https://www.google.es/search?q=add+folder+to+PATH+on+Windows) variable.
+    * Add the path `C:\Program Files\FFmpeg\bin` to [PATH](https://www.google.es/search?q=add+folder+to+PATH+on+Windows) variable.
 
 ### Related links:
 
