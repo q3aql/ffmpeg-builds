@@ -81,6 +81,7 @@ fi
 # Install dependencies
 apt-cyg update
 apt-cyg install wget
+apt-cyg install curl
 apt-cyg install nasm
 apt-cyg install yasm
 apt-cyg install zip
@@ -107,6 +108,8 @@ apt-cyg install libtheora-devel
 apt-cyg install libxml2-devel
 apt-cyg install libopenjpeg-devel
 apt-cyg install libgnutls-devel
+apt-cyg install libvorbis-devel
+apt-cyg install libogg-devel
 apt-cyg install libopus-devel
 apt-cyg install openssl-devel
 apt-cyg install libopusfile-devel
@@ -118,7 +121,6 @@ apt-cyg install cmake
 apt-cyg install libgc-devel
 apt-cyg install autoconf
 apt-cyg install libtool
-apt-cyg install wget
 apt-cyg install ninja
 
 # Build x264
@@ -181,6 +183,7 @@ echo "* Building FFmpeg using system libraries"
 cd ${dir_build_libs}
 name_package=$(echo ${ffmpeg_package_name} | cut -d "@" -f 1)
 name_folder=$(echo ${ffmpeg_package_name} | cut -d "@" -f 2)
+curl "${ffmpeg_package}" > ${name_package}
 wget -c ${ffmpeg_package}
 tar jxvf ${name_package}
 cd ${name_folder}
@@ -199,72 +202,28 @@ rm -rf ${name_folder}
 
 # Copy libraries
 mkdir -p ${dir_build}/bin
-cp -rfv /usr/bin/xvidcore.dll ${dir_build}/bin/ # (0xf00000)
-cp -rfv /usr/bin/cygcaca-*.dll ${dir_build}/bin/ # (0x68a40000)
-cp -rfv /usr/bin/cygSDL*.dll ${dir_build}/bin/ # (0x6aca0000)
-cp -rfv /usr/bin/cygiconv-*.dll ${dir_build}/bin/ # (0x693b0000)
-cp -rfv /usr/bin/cygopenjp2-*.dll ${dir_build}/bin/ # (0x70a40000)
-cp -rfv /usr/bin/cygmp3lame-*.dll ${dir_build}/bin/ # (0x6b540000)
-cp -rfv /usr/bin/cygopus-*.dll ${dir_build}/bin/ # (0x67100000)
-cp -rfv /usr/bin/cygspeex-*.dll ${dir_build}/bin/ # (0x66840000)
-cp -rfv /usr/bin/cygtheoradec-*.dll ${dir_build}/bin/ # (0x64880000)
-cp -rfv /usr/bin/cygtwolame-*.dll ${dir_build}/bin/ # (0x65a80000)
-cp -rfv /usr/bin/cygtheoraenc-*.dll ${dir_build}/bin/ # (0x69100000)
-cp -rfv /usr/bin/cygvorbis-*.dll ${dir_build}/bin/ # (0x67360000)
-cp -rfv /usr/bin/cygvorbisenc-*.dll ${dir_build}/bin/ # (0x672d0000)
-cp -rfv /usr/bin/cygvpx-*.dll ${dir_build}/bin/ # (0x702c0000)
-cp -rfv /usr/bin/cygwebpmux-*.dll ${dir_build}/bin/ # (0x66c80eso000)
-cp -rfv /usr/bin/cygx265-*.dll ${dir_build}/bin/ # (0x68080000)
-cp -rfv /usr/bin/cygass-*.dll ${dir_build}/bin/ # (0x686c0000)
-cp -rfv /usr/bin/cygbs2b-*.dll ${dir_build}/bin/ # (0x6f3c0000)
-cp -rfv /usr/bin/cygfontconfig-*.dll ${dir_build}/bin/ # (0x694c0000)
-cp -rfv /usr/bin/cygfreetype-*.dll ${dir_build}/bin/ # (0x675c0000)
-cp -rfv /usr/bin/cygfribidi-*.dll ${dir_build}/bin/ # (0x6cf00000)
-cp -rfv /usr/bin/cygwebp-*.dll ${dir_build}/bin/ # (0x67240000)
-cp -rfv /usr/bin/cygssl-*.dll ${dir_build}/bin/ # (0x67870000)
-cp -rfv /usr/bin/cygcrypto-*.1.dll ${dir_build}/bin/ # (0x6a500000)
-cp -rfv /usr/bin/xvidcore.dll ${dir_build}/bin/ # (0xf00000)
-cp -rfv /usr/bin/cygGL-*.dll ${dir_build}/bin/ # (0x6fef0000)
-cp -rfv /usr/bin/cygGLU-*.dll ${dir_build}/bin/ # (0x701c0000)
-cp -rfv /usr/bin/cygglut-*.dll ${dir_build}/bin/ # (0x65640000)
-cp -rfv /usr/bin/cygX11-*.dll ${dir_build}/bin/ # (0x6aaf0000)
-cp -rfv /usr/bin/cygogg-*.dll ${dir_build}/bin/ # (0x68640000)
-cp -rfv /usr/bin/xvidcore.dll ${dir_build}/bin/ # (0xf00000)
-cp -rfv /usr/bin/cygintl-8.dll ${dir_build}/bin/ # (0x69320000)
-cp -rfv /usr/bin/cygexpat-*.dll ${dir_build}/bin/ # (0x6a0d0000)
-cp -rfv /usr/bin/cygbrotlidec-*.dll ${dir_build}/bin/ # (0x6a810000)
-cp -rfv /usr/bin/cyguuid-*.dll ${dir_build}/bin/ # (0x673c0000)
-cp -rfv /usr/bin/cygpng*.dll ${dir_build}/bin/ # (0x67fb0000)
-cp -rfv /usr/bin/cygbz2-*.dll ${dir_build}/bin/ # (0x6a7f0000)
-cp -rfv /usr/bin/cygglib-*.0-*.dll ${dir_build}/bin/ # (0x69a60000)
-cp -rfv /usr/bin/cygxcb-*.dll ${dir_build}/bin/ # (0x67200000)
-cp -rfv /usr/bin/cygX11-xcb-*.dll ${dir_build}/bin/ # (0x6aae0000)
-cp -rfv /usr/bin/cygXext-*.dll ${dir_build}/bin/ # (0x6aa80000)
-cp -rfv /usr/bin/cygglapi-*.dll ${dir_build}/bin/ # (0x69b80000)
-cp -rfv /usr/bin/cygXi-*.dll ${dir_build}/bin/ # (0x6aa50000)
-cp -rfv /usr/bin/cygXrandr-*.dll ${dir_build}/bin/ # (0x6aa20000)
-cp -rfv /usr/bin/cygbrotlicommon-*.dll ${dir_build}/bin/ # (0x6a830000)
-cp -rfv /usr/bin/cygpcre-*.dll ${dir_build}/bin/ # (0x68480000)
-cp -rfv /usr/bin/cygXau-*.dll ${dir_build}/bin/ # (0x6aad0000)
-cp -rfv /usr/bin/cygXdmcp-*.dll ${dir_build}/bin/ # (0x6aaa0000)
-cp -rfv /usr/bin/cygxcb-glx-*.dll ${dir_build}/bin/ # (0x671e0000)
-cp -rfv /usr/bin/cygXrender-*.dll ${dir_build}/bin/ # (0x6aa00000)
-cp -rfv /usr/bin/xvidcore.dll ${dir_build}/bin/ # (0xf00000)
-cp -rfv /usr/bin/cygncursesw-*.dll ${dir_build}/bin/ # (0x700000)
-cp -rfv /usr/bin/cygxml2-*.dll ${dir_build}/bin/ # (0x1020000)
-cp -rfv /usr/bin/cygstdc++-*.dll ${dir_build}/bin/ # (0x1170000)
-cp -rfv /usr/bin/cygstdc++-*.dll ${dir_build}/bin/ # (0x1380000)
-cp -rfv /usr/bin/cygharfbuzz-*.dll ${dir_build}/bin/ # (0x1590000)
-cp -rfv /usr/bin/cygsoxr-*.dll ${dir_build}/bin/ # (0x6b900000)
-cp -rfv /usr/bin/cyglzma-*.dll ${dir_build}/bin/ # (0x68d30000)
-cp -rfv /usr/bin/cyggomp-*.dll ${dir_build}/bin/ # (0x760000)
-cp -rfv /usr/bin/cyggomp-*.dll ${dir_build}/bin/ # (0x760000)
-cp -rfv /usr/bin/cyggomp-*.dll ${dir_build}/bin/ # (0x760000)
-cp -rfv /usr/bin/cyggraphite*.dll ${dir_build}/bin/ # (0x7a0000)
+echo "* Searching dependencies for FFmpeg"
+ldd ${dir_build}/bin/ffmpeg.exe | grep "/bin/" | cut -d ">" -f 2 | cut -d "(" -f 1 | tr -s " " > /tmp/deps.txt
+file_size=$(cat /tmp/deps.txt | wc -l)
+file_scan=1
+while [ ${file_scan} -le ${file_size} ] ; do
+  library=$(cat /tmp/deps.txt | head -${file_scan} | tail -1)
+  cp -rfv ${library} ${dir_build}/bin
+  file_scan=$(expr ${file_scan} + 1)
+done
+echo "* Searching dependencies for FFprobe"
+ldd ${dir_build}/bin/ffprobe.exe | grep "/bin/" | cut -d ">" -f 2 | cut -d "(" -f 1 | tr -s " " > /tmp/deps.txt
+file_size=$(cat /tmp/deps.txt | wc -l)
+file_scan=1
+while [ ${file_scan} -le ${file_size} ] ; do
+  library=$(cat /tmp/deps.txt | head -${file_scan} | tail -1)
+  cp -rfv ${library} ${dir_build}/bin
+  file_scan=$(expr ${file_scan} + 1)
+done
 strip --strip-all ${dir_build}/bin/*
-cp -rfv /usr/bin/cyggcc_s-*.dll ${dir_build}/bin/ # (0x69e70000)
-cp -rfv /usr/bin/cygwin1.dll ${dir_build}/bin/ # (0x61000000)
-cp -rfv /usr/bin/cygz.dll ${dir_build}/bin/ # (0x67030000)
+cp -rfv /usr/bin/cyggcc_s-*.dll ${dir_build}/bin/
+cp -rfv /usr/bin/cygwin1.dll ${dir_build}/bin/
+cp -rfv /usr/bin/cygz.dll ${dir_build}/bin/
 
 # Create package
 echo "* Creating package"
