@@ -225,6 +225,69 @@ cp -rfv /usr/bin/cyggcc_s-*.dll ${dir_build}/bin/
 cp -rfv /usr/bin/cygwin1.dll ${dir_build}/bin/
 cp -rfv /usr/bin/cygz.dll ${dir_build}/bin/
 
+# Create CMD scripts for FFmpeg and FFprobe
+echo "* Creating CMD scripts for FFmpeg and FFprobe"
+echo "@echo off" > ${dir_build}/ffmpeg.cmd
+echo "" >> ${dir_build}/ffmpeg.cmd
+echo 'set run_binary="%~d0%~p0\bin\ffmpeg.exe"' >> ${dir_build}/ffmpeg.cmd
+echo 'set FFmpegArgs=%1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffmpeg.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffmpeg.cmd 
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffmpeg.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffmpeg.cmd 
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffmpeg.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffmpeg.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffmpeg.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffmpeg.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffmpeg.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffmpeg.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffmpeg.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffmpeg.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffmpeg.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffmpeg.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffmpeg.cmd
+echo 'for /L %%i in (0,1,8) do @shift' > ${dir_build}/ffmpeg.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffmpeg.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffmpeg.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffmpeg.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffmpeg.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffmpeg.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffmpeg.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffmpeg.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffmpeg.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffmpeg.cmd
+echo '%run_binary% %FFmpegArgs%' >> ${dir_build}/ffmpeg.cmd
+echo "* Script ffmpeg.cmd created"
+echo "@echo off" > ${dir_build}/ffprobe.cmd
+echo "" >> ${dir_build}/ffprobe.cmd
+echo 'set run_binary="%~d0%~p0\bin\ffprobe.exe"' >> ${dir_build}/ffprobe.cmd
+echo 'set FFmpegArgs=%1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffprobe.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffprobe.cmd 
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffprobe.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffprobe.cmd 
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffprobe.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffprobe.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffprobe.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffprobe.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffprobe.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffprobe.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffprobe.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffprobe.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffprobe.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffprobe.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffprobe.cmd
+echo 'for /L %%i in (0,1,8) do @shift' > ${dir_build}/ffprobe.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffprobe.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffprobe.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffprobe.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffprobe.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffprobe.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffprobe.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffprobe.cmd
+echo 'for /L %%i in (0,1,8) do @shift' >> ${dir_build}/ffprobe.cmd
+echo 'set FFmpegArgs=%FFmpegArgs% %1 %2 %3 %4 %5 %6 %7 %8 %9' >> ${dir_build}/ffprobe.cmd
+echo '%run_binary% %FFmpegArgs%' >> ${dir_build}/ffprobe.cmd
+echo "* Script ffprobe.cmd created"
+
 # Create package
 echo "* Creating package"
 cd ${dir_build}
