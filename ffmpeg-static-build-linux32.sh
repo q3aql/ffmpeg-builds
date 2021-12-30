@@ -608,11 +608,12 @@ else
   git clone ${lib_aom}
   cd "${name_folder}"
   rm -rf CMakeCache.txt CMakeFiles
-  mkdir -p build
-  cd build
+  mkdir -p aom_build
+  cd aom_build
   PKG_CONFIG_PATH=${dir_build_libs}/lib/pkgconfig/ LD_LIBRARY_PATH=${dir_build_libs}/lib/ CC="${C_COMPILER}" CXX="${CXX_COMPILER}" cmake -DCMAKE_INSTALL_PREFIX="${dir_build_libs}" ..
   make
   make install
+  cd ${dir_build_libs}
   rm -rfv ${name_package}
   rm -rfv ${name_folder}
 fi
