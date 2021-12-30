@@ -34,7 +34,7 @@ FFmpeg builds for GNU/Linux & Windows (with Cygwin)
     
       ```shell
       $ sudo tar jxvf ffmpeg-4.4.1-linux-gnu-[arch]-build.tar.bz2 -C /
-      ````
+      ```
     
     _Note: Replace `[arch]` with `32bit` or `64bit` depending on your architecture._
       
@@ -57,7 +57,7 @@ FFmpeg builds for GNU/Linux & Windows (with Cygwin)
       $ git clone https://github.com/q3aql/ffmpeg-builds/
       $ cd ffmpeg-builds
       $ sudo ./ffmpeg-static-build-[arch].sh
-      ````
+      ```
     
     _Note: Replace `[arch]` with `linux32` or `linux64` depending on your architecture._
       
@@ -71,7 +71,7 @@ FFmpeg builds for GNU/Linux & Windows (with Cygwin)
       $ git clone https://github.com/q3aql/ffmpeg-builds/
       $ cd ffmpeg-builds
       $ ./ffmpeg-share-build-[arch].sh
-      ````
+      ```
     
     _Note: Replace `[arch]` with `cygwin32` or `cygwin64` depending on your architecture._
 
