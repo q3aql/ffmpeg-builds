@@ -34,6 +34,22 @@ lib_x265_name="x265_3.4.tar.gz@x265_3.4"
 lib_xvid="https://downloads.xvid.com/downloads/xvidcore-1.3.7.tar.gz"
 lib_xvid_name="xvidcore-1.3.7.tar.gz@xvidcore"
 
+lib_aom_msys="https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-aom-3.2.0-1-any.pkg.tar.zst"
+lib_aom_msys_name="mingw-w64-i686-aom-3.2.0-1-any.pkg.tar.zst@mingw32"
+#https://packages.msys2.org/package/mingw-w64-i686-aom
+
+# Dependencies for aom
+dep_one="https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-libs-11.2.0-5-any.pkg.tar.zst"
+dep_one_name="mingw-w64-i686-gcc-libs-11.2.0-5-any.pkg.tar.zst"
+dep_two="https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-libwinpthread-git-9.0.0.6357.eac8c38c1-1-any.pkg.tar.zst"
+dep_two_name="mingw-w64-i686-libwinpthread-git-9.0.0.6357.eac8c38c1-1-any.pkg.tar.zst"
+dep_three="https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-gmp-6.2.1-2-any.pkg.tar.zst"
+dep_three_name="mingw-w64-i686-gmp-6.2.1-2-any.pkg.tar.zst"
+dep_four="https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-mpc-1.2.1-1-any.pkg.tar.zst"
+dep_four_name="mingw-w64-i686-mpc-1.2.1-1-any.pkg.tar.zst"
+dep_five="https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-mpfr-4.1.0.p13-1-any.pkg.tar.zst"
+dep_five_name="mingw-w64-i686-mpfr-4.1.0.p13-1-any.pkg.tar.zst"
+
 # Check root permission 
 mkdir -p /etc/root &> /dev/null
 administrador=$?
@@ -85,6 +101,8 @@ apt-cyg install curl
 apt-cyg install nasm
 apt-cyg install yasm
 apt-cyg install zip
+apt-cyg install perl
+apt-cyg install sed
 apt-cyg install fontconfig
 apt-cyg install libass-devel
 apt-cyg install libfreetype-devel
@@ -95,6 +113,7 @@ apt-cyg install make
 apt-cyg install gcc
 apt-cyg install gcc-core
 apt-cyg install gcc-g++
+apt-cyg install zstd
 apt-cyg install libfribidi-devel
 apt-cyg install libgme-devel
 apt-cyg install libcaca++-devel
@@ -178,6 +197,42 @@ else
   make install
 fi
 
+# Build aom
+if [ -f /usr/lib/pkgconfig/aom.pc ] ; then
+  echo "* Aom was compiled previously"
+  sleep 1
+else
+  cd ${dir_build_libs}
+  rm -rfv ${name_package}
+  name_package=$(echo ${lib_aom_msys_name} | cut -d "@" -f 1)
+  name_folder=$(echo ${lib_aom_msys_name} | cut -d "@" -f 2)
+  cd /tmp
+  wget -c ${lib_aom_msys}
+  tar --use-compress-program=unzstd -xvf ${name_package}
+  cd ${name_folder}
+  cp -rfv * /usr/
+  cd ..
+  rm -rfv ${name_package}
+  rm -rfv ${name_folder}
+  # Install binary dependencies
+  cd /tmp
+  wget -c ${dep_one}
+  wget -c ${dep_two}
+  wget -c ${dep_three}
+  wget -c ${dep_four}
+  wget -c ${dep_five}
+  tar --use-compress-program=unzstd -xvf ${dep_one_name}
+  tar --use-compress-program=unzstd -xvf ${dep_two_name}
+  tar --use-compress-program=unzstd -xvf ${dep_three_name}
+  tar --use-compress-program=unzstd -xvf ${dep_four_name}
+  tar --use-compress-program=unzstd -xvf ${dep_five_name}
+  cd ${name_folder}
+  cp -rfv bin/* /usr/bin/
+  cd ..
+  rm -rfv ${name_package}
+  rm -rfv ${name_folder}
+fi
+
 # Download FFmpeg
 echo "* Building FFmpeg using system libraries"
 cd ${dir_build_libs}
@@ -188,8 +243,22 @@ wget -c ${ffmpeg_package}
 tar jxvf ${name_package}
 cd ${name_folder}
 chmod +x configure
-./configure --prefix=${dir_build} --enable-gpl --enable-nonfree --disable-ffplay --disable-w32threads --enable-openssl --enable-libass --enable-libbs2b --enable-libcaca --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libmp3lame --enable-libopenjpeg --enable-libopus --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libxml2 --enable-libxvid --enable-libspeex --enable-libx264 --enable-libx265 --enable-static --enable-version3 --enable-doc --disable-indev=dshow
-sleep 20
+./configure --prefix=${dir_build} --enable-gpl --enable-nonfree --disable-ffplay --disable-w32threads --enable-openssl --enable-libass --enable-libbs2b --enable-libcaca --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libmp3lame --enable-libopenjpeg --enable-libopus --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libxml2 --enable-libxvid --enable-libspeex --enable-libx264 --enable-libx265 --enable-static --enable-version3 --enable-doc --disable-indev=dshow --enable-libaom
+build_error=$?
+if [ ${build_error} -eq 0 ] ; then
+  echo ""
+  echo "* Build configuration ready"
+  sleep 5
+else
+  echo ""
+  echo "* Build configuration failed"
+  echo "* Trying with build config without errors."
+  echo "* Disabling the following libraries:"
+  echo "   - aom"
+  echo ""
+  sleep 5
+  ./configure --prefix=${dir_build} --enable-gpl --enable-nonfree --disable-ffplay --disable-w32threads --enable-openssl --enable-libass --enable-libbs2b --enable-libcaca --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libmp3lame --enable-libopenjpeg --enable-libopus --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libxml2 --enable-libxvid --enable-libspeex --enable-libx264 --enable-libx265 --enable-static --enable-version3 --enable-doc --disable-indev=dshow --disable-libaom
+fi
 make
 rm -rf ${dir_build}/*
 make install
