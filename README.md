@@ -28,18 +28,19 @@ FFmpeg builds for GNU/Linux & Windows (with Cygwin)
 ### HOW TO INSTALL:
 
   * **GNU/Linux instructions:**
-  
+
+    * Download the package ([32 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-32bit-build.tar.bz2) or [64 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-linux-gnu-64bit-build.tar.bz2)).
     * Open the terminal and type the following command:
     
       ```shell
       $ sudo tar jxvf ffmpeg-4.4.1-linux-gnu-[arch]-build.tar.bz2 -C /
       ````
     
-    _Note: Replace `[arch]` with `linux32` or `linux64` depending on your architecture._
+    _Note: Replace `[arch]` with `32bit` or `64bit` depending on your architecture._
       
   * **Windows instructions:**
     
-    * Download the package ([32 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-win-32bit-build-cygwin.zip) or [64 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-win-64bit-build-cygwin.zip))
+    * Download the package ([32 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-win-32bit-build-cygwin.zip) or [64 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-win-64bit-build-cygwin.zip)).
     * Unzip the package with [7-zip](http://www.7-zip.org/) or [Winrar](http://www.rarlab.com/).
     * Copy the files to a folder. For example: `C:\Program Files\FFmpeg`
     * Add the path `C:\Program Files\FFmpeg` to [PATH](https://www.google.es/search?q=add+folder+to+PATH+on+Windows) variable.
