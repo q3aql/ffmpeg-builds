@@ -48,7 +48,7 @@ FFmpeg builds for GNU/Linux & Windows (with Cygwin)
 
   * **GNU/Linux instructions:**
   
-    * Install dependencies in your Linux distro:
+    * Install dependencies in your GNU/Linux distro.
     * Dependencies: `wget`, `git`, `gcc`, `g++`, `yasm`, `nasm`, `make`, `meson`, `ninja`. `gperf`, `autoconf` and `libtool`
     * Type the following commands:
 
@@ -63,10 +63,10 @@ FFmpeg builds for GNU/Linux & Windows (with Cygwin)
   * **Windows instructions:**
   
     * Install Cywin for [32bits](https://cygwin.com/setup-x86.exe) or [64bits](https://cygwin.com/setup-x86_64.exe).
-    * During installation, configure the repository and install `git` and `wget`.
+    * During installation, `configure the repository` and install `git` and `wget`.
     * Open Cygwin terminal and type the following commands:
     
-    ```shell
+      ```shell
       $ git clone https://github.com/q3aql/ffmpeg-builds/
       $ cd ffmpeg-builds
       $ ./ffmpeg-share-build-[arch].sh
