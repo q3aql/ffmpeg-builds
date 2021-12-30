@@ -39,7 +39,7 @@ FFmpeg builds for GNU/Linux & Windows (with Cygwin)
   
     * Unzip the package with [7-zip](http://www.7-zip.org/) or [Winrar](http://www.rarlab.com/).
     * Copy the files to a folder. For example: `C:\Program Files\FFmpeg`
-    * Add the path `C:\Program Files\FFmpeg\bin` to [PATH](https://www.google.es/search?q=add+folder+to+PATH+on+Windows) variable.
+    * Add the path `C:\Program Files\FFmpeg` to [PATH](https://www.google.es/search?q=add+folder+to+PATH+on+Windows) variable.
 
 ### Related links:
 
