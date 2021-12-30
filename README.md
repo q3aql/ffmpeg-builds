@@ -25,7 +25,7 @@ FFmpeg builds for GNU/Linux & Windows (with Cygwin)
     * [ffmpeg-4.4.1-win-32bit-build-cygwin.zip](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-win-32bit-build-cygwin.zip)
     * [ffmpeg-4.4.1-win-64bit-build-cygwin.zip](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-win-64bit-build-cygwin.zip)
 
-### How to install:
+### HOW TO INSTALL:
 
   * **GNU/Linux instructions:**
   
@@ -34,12 +34,45 @@ FFmpeg builds for GNU/Linux & Windows (with Cygwin)
       ```shell
       $ sudo tar jxvf ffmpeg-4.4.1-linux-gnu-[arch]-build.tar.bz2 -C /
       ````
+    
+    _Note: Replace `[arch]` with `linux32` or `linux64` depending on your architecture._
       
   * **Windows instructions:**
-  
+    
+    * Download the package ([32 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-win-32bit-build-cygwin.zip) or [64 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v4.4.1/ffmpeg-4.4.1-win-64bit-build-cygwin.zip))
     * Unzip the package with [7-zip](http://www.7-zip.org/) or [Winrar](http://www.rarlab.com/).
     * Copy the files to a folder. For example: `C:\Program Files\FFmpeg`
     * Add the path `C:\Program Files\FFmpeg` to [PATH](https://www.google.es/search?q=add+folder+to+PATH+on+Windows) variable.
+    
+### HOW TO CREATE YOUR BUILD:
+
+  * **GNU/Linux instructions:**
+  
+    * Install dependencies in your Linux distro:
+    * Dependencies: `wget`, `git`, `gcc`, `g++`, `yasm`, `nasm`, `make`, `meson`, `ninja`. `gperf`, `autoconf` and `libtool`
+    * Type the following commands:
+
+      ```shell
+      $ git clone https://github.com/q3aql/ffmpeg-builds/
+      $ cd ffmpeg-builds
+      $ sudo ./ffmpeg-static-build-[arch].sh
+      ````
+    
+    _Note: Replace `[arch]` with `linux32` or `linux64` depending on your architecture._
+      
+  * **Windows instructions:**
+  
+    * Install Cywin for [32bits](https://cygwin.com/setup-x86.exe) or [64bits](https://cygwin.com/setup-x86_64.exe).
+    * During installation, configure the repository and install `git` and `wget`.
+    * Open Cygwin terminal and type the following commands:
+    
+    ```shell
+      $ git clone https://github.com/q3aql/ffmpeg-builds/
+      $ cd ffmpeg-builds
+      $ ./ffmpeg-share-build-[arch].sh
+      ````
+    
+    _Note: Replace `[arch]` with `cygwin32` or `cygwin64` depending on your architecture._
 
 ### Related links:
 
