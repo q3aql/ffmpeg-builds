@@ -243,7 +243,7 @@ wget -c ${ffmpeg_package}
 tar jxvf ${name_package}
 cd ${name_folder}
 chmod +x configure
-./configure --prefix=${dir_build} --enable-gpl --enable-nonfree --disable-ffplay --disable-w32threads --enable-openssl --enable-libass --enable-libbs2b --enable-libcaca --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libmp3lame --enable-libopenjpeg --enable-libopus --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libxml2 --enable-libxvid --enable-libspeex --enable-libx264 --enable-libx265 --enable-static --enable-version3 --enable-doc --disable-indev=dshow --enable-libaom
+./configure --prefix=${dir_build} --enable-gpl --enable-nonfree --disable-ffplay --disable-w32threads --enable-openssl --enable-libass --enable-libbs2b --enable-libcaca --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libmp3lame --enable-libopenjpeg --enable-libopus --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libxml2 --enable-libxvid --enable-libspeex --enable-libx264 --enable-libx265 --enable-static --enable-version3 --enable-doc --disable-indev=dshow --disable-indev=gdigrab --enable-libaom
 build_error=$?
 if [ ${build_error} -eq 0 ] ; then
   echo ""
@@ -257,7 +257,7 @@ else
   echo "   - aom"
   echo ""
   sleep 5
-  ./configure --prefix=${dir_build} --enable-gpl --enable-nonfree --disable-ffplay --disable-w32threads --enable-openssl --enable-libass --enable-libbs2b --enable-libcaca --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libmp3lame --enable-libopenjpeg --enable-libopus --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libxml2 --enable-libxvid --enable-libspeex --enable-libx264 --enable-libx265 --enable-static --enable-version3 --enable-doc --disable-indev=dshow --disable-libaom
+  ./configure --prefix=${dir_build} --enable-gpl --enable-nonfree --disable-ffplay --disable-w32threads --enable-openssl --enable-libass --enable-libbs2b --enable-libcaca --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libmp3lame --enable-libopenjpeg --enable-libopus --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libxml2 --enable-libxvid --enable-libspeex --enable-libx264 --enable-libx265 --enable-static --enable-version3 --enable-doc --disable-indev=dshow --disable-indev=gdigrab --disable-libaom
 fi
 make
 rm -rf ${dir_build}/*
