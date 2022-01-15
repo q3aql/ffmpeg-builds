@@ -362,11 +362,11 @@ echo "* Creating package"
 cd ${dir_build}
 rm -rf lib
 rm -rf include
-zip ${name_folder}-win-64bit-build-cygwin.zip -r *
-rm -rf ${dir_build_packages}/${name_folder}-win-64bit-build-cygwin.zip
-mv ${name_folder}-win-64bit-build-cygwin.zip ${dir_build_packages}
+zip ${name_folder}-win-64bit-build.zip -r *
+rm -rf ${dir_build_packages}/${name_folder}-win-64bit-build.zip
+mv ${name_folder}-win-64bit-build.zip ${dir_build_packages}
 echo ""
-echo "* Your build: ${dir_build_packages}/${name_folder}-win-64bit-build-cygwin.zip"
+echo "* Your build: ${dir_build_packages}/${name_folder}-win-64bit-build.zip"
 echo ""
 chmod 775 -R ${dir_build_packages}
 
