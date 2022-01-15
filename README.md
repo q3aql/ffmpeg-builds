@@ -1,5 +1,5 @@
-FFmpeg builds for GNU/Linux & Windows (with Cygwin) 
-===================================================
+FFmpeg builds for GNU/Linux & Windows
+=====================================
 
 ### FFmpeg 5.0 Builds:
 
