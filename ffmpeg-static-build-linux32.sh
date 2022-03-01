@@ -109,8 +109,8 @@ lib_webp_name="v1.2.1.tar.gz@libwebp-1.2.1"
 lib_x264="https://code.videolan.org/videolan/x264"
 lib_x264_name="x264"
 
-lib_x265="http://download.openpkg.org/components/cache/x265/x265_3.4.tar.gz"
-lib_x265_name="x265_3.4.tar.gz@x265_3.4"
+lib_x265="https://bitbucket.org/multicoreware/x265_git/downloads/x265_3.5.tar.gz"
+lib_x265_name="x265_3.5.tar.gz@x265_3.5"
 
 lib_dav1d="https://code.videolan.org/videolan/dav1d.git"
 lib_dav1d_name="dav1d"
