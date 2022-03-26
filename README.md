@@ -5,20 +5,12 @@ FFmpeg builds for GNU/Linux & Windows
 
   * **`GNU/Linux downloads (Static):`**
   
-    * Generic (All distros):
-    
-      * [ffmpeg-5.0-linux-gnu-32bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0/ffmpeg-5.0-linux-gnu-32bit-build.tar.bz2)
-      * [ffmpeg-5.0-linux-gnu-64bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0/ffmpeg-5.0-linux-gnu-64bit-build.tar.bz2)
-     
-     * DEB (Debian Based):
-     
-       * [ffmpeg-5.0-linux-gnu-32bit-build.deb](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0/ffmpeg-5.0-linux-gnu-32bit-build.deb)
-       * [ffmpeg-5.0-linux-gnu-64bit-build.deb](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0/ffmpeg-5.0-linux-gnu-64bit-build.deb)
-       
-     * RPM (RedHat Based):
-     
-       * [ffmpeg-5.0-linux-gnu-32bit-build.rpm](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0/ffmpeg-5.0-linux-gnu-32bit-build.rpm)
-       * [ffmpeg-5.0-linux-gnu-64bit-build.rpm](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0/ffmpeg-5.0-linux-gnu-64bit-build.rpm)
+    * [ffmpeg-5.0-linux-gnu-32bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0/ffmpeg-5.0-linux-gnu-32bit-build.tar.bz2) (Generic Linux x86)
+    * [ffmpeg-5.0-linux-gnu-64bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0/ffmpeg-5.0-linux-gnu-64bit-build.tar.bz2) (Generic Linux x86_64)
+    * [ffmpeg-5.0-linux-gnu-32bit-build.deb](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0/ffmpeg-5.0-linux-gnu-32bit-build.deb) (Debian/Ubuntu x86)
+    * [ffmpeg-5.0-linux-gnu-64bit-build.deb](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0/ffmpeg-5.0-linux-gnu-64bit-build.deb) (Debian/Ubuntu x86_64)
+    * [ffmpeg-5.0-linux-gnu-32bit-build.rpm](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0/ffmpeg-5.0-linux-gnu-32bit-build.rpm) (RedHat/Fedora x86)
+    * [ffmpeg-5.0-linux-gnu-64bit-build.rpm](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0/ffmpeg-5.0-linux-gnu-64bit-build.rpm) (RedHat/Fedora x86_64)
        
   * **`Windows downloads (Shared):`**
   
