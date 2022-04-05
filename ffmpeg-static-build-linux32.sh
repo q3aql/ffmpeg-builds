@@ -52,8 +52,8 @@ lib_expat_name="expat-2.4.1.tar.bz2@expat-2.4.1"
 lib_fontconfig="https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.13.94.tar.gz"
 lib_fontconfig_name="fontconfig-2.13.94.tar.gz@fontconfig-2.13.94"
 
-lib_frei0r="https://files.dyne.org/frei0r/frei0r-plugins-1.7.0.tar.gz"
-lib_frei0r_name="frei0r-plugins-1.7.0.tar.gz@frei0r-plugins-1.7.0"
+lib_frei0r="https://files.dyne.org/frei0r/frei0r-plugins-1.8.0.tar.gz"
+lib_frei0r_name="frei0r-plugins-1.8.0.tar.gz@frei0r-plugins-1.8.0"
 
 lib_openssl="https://www.openssl.org/source/openssl-1.1.1m.tar.gz"
 lib_openssl_name="openssl-1.1.1m.tar.gz@openssl-1.1.1m"
