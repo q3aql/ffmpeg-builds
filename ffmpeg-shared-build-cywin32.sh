@@ -17,8 +17,8 @@ dir_build_libs="/opt/ffmpeg-builds/lib/cygwin32-shared"
 dir_build_packages="/opt/ffmpeg-builds/packages"
 
 # FFmpeg version
-ffmpeg_package="https://ffmpeg.org/releases/ffmpeg-5.0.tar.bz2"
-ffmpeg_package_name="ffmpeg-5.0.tar.bz2@ffmpeg-5.0"
+ffmpeg_package="https://ffmpeg.org/releases/ffmpeg-5.0.1.tar.bz2"
+ffmpeg_package_name="ffmpeg-5.0.tar.bz2@ffmpeg-5.0.1"
 
 # COMPILER VARIABLES
 C_COMPILER="gcc"
