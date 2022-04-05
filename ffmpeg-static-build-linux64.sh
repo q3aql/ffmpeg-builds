@@ -187,6 +187,8 @@ else
   wget -c "${lib_frei0r}"
   tar zxvf ${name_package}
   cd "${name_folder}"
+  chmod +x autogen.sh
+  ./autogen.sh
   PKG_CONFIG_PATH=${dir_build_libs}/lib/pkgconfig/ LD_LIBRARY_PATH=${dir_build_libs}/lib/ CC="${C_COMPILER}" CXX="${CXX_COMPILER}" ./configure --prefix=${dir_build_libs} --enable-static
   make
   make install
