@@ -11,11 +11,14 @@ FFmpeg builds for GNU/Linux & Windows
     * [ffmpeg-5.0.1-linux-gnu-64bit-build.deb](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0.1/ffmpeg-5.0.1-linux-gnu-64bit-build.deb) (Debian/Ubuntu x86_64)
     * [ffmpeg-5.0.1-linux-gnu-32bit-build.rpm](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0.1/ffmpeg-5.0.1-linux-gnu-32bit-build.rpm) (RedHat/Fedora x86)
     * [ffmpeg-5.0.1-linux-gnu-64bit-build.rpm](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0.1/ffmpeg-5.0.1-linux-gnu-64bit-build.rpm) (RedHat/Fedora x86_64)
+    * [ffmpeg-av-5.0.1-linux-gnu-64bit-build.pkg.tar.zst](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0.1/ffmpeg-av-5.0.1-linux-gnu-64bit-build.pkg.tar.zst) (Arch x86_64)
        
   * **`Windows downloads (Shared):`**
   
     * [ffmpeg-5.0.1-win-32bit-build.zip](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0.1/ffmpeg-5.0.1-win-32bit-build.zip)
     * [ffmpeg-5.0.1-win-64bit-build.zip](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.0.1/ffmpeg-5.0.1-win-64bit-build.zip)
+
+_Note: The binaries in `Arch` have been renamed to `ffmpeg-av` and `ffprobe-av` to avoid conflicts with the package and repository dependencies._
 
 ### HOW TO INSTALL:
 
