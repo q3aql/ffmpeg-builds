@@ -141,6 +141,7 @@ apt-cyg install libgc-devel
 apt-cyg install autoconf
 apt-cyg install libtool
 apt-cyg install ninja
+apt-cyg install libiconv-devel
 
 # Build x264
 if [ -f /usr/lib/pkgconfig/x264.pc ] ; then
