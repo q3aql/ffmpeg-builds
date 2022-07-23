@@ -49,7 +49,7 @@ _Note: The binaries in `Arch` have been renamed to `ffmpeg-av` and `ffprobe-av` 
     * Type the following commands:
 
       ```shell
-      $ git clone https://github.com/q3aql/ffmpeg-builds/
+      $ git clone https://github.com/q3aql/ffmpeg-builds
       $ cd ffmpeg-builds
       $ sudo ./ffmpeg-static-build-[arch].sh
       ```
@@ -63,7 +63,7 @@ _Note: The binaries in `Arch` have been renamed to `ffmpeg-av` and `ffprobe-av` 
     * Open Cygwin terminal and type the following commands:
     
       ```shell
-      $ git clone https://github.com/q3aql/ffmpeg-builds/
+      $ git clone https://github.com/q3aql/ffmpeg-builds
       $ cd ffmpeg-builds
       $ ./ffmpeg-share-build-[arch].sh
       ```
