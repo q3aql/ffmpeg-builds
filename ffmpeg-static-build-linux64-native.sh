@@ -12,8 +12,8 @@ dir_build_libs="/opt/ffmpeg-builds/lib/linux64"
 dir_build_packages="/opt/ffmpeg-builds/packages"
 
 # FFmpeg version
-ffmpeg_package="https://ffmpeg.org/releases/ffmpeg-5.1.tar.bz2"
-ffmpeg_package_name="ffmpeg-5.1.tar.bz2@ffmpeg-5.1"
+ffmpeg_package="https://ffmpeg.org/releases/ffmpeg-5.1.1.tar.bz2"
+ffmpeg_package_name="ffmpeg-5.1.1.tar.bz2@ffmpeg-5.1.1"
 
 # Build parameters 
 ffmpeg_parameters="--prefix=${dir_build}/usr --enable-gpl --enable-nonfree --enable-version3 \
