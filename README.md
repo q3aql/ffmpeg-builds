@@ -1,41 +1,38 @@
 FFmpeg builds for GNU/Linux & Windows
 =====================================
 
-### FFmpeg 5.1 Builds:
+### FFmpeg 5.1.1 Builds:
 
   * **`GNU/Linux downloads (Static):`**
   
-    * [ffmpeg-5.1-linux-gnu-32bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1/ffmpeg-5.1-linux-gnu-32bit-build.tar.bz2) (Generic Linux x86)
-    * [ffmpeg-5.1-linux-gnu-64bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1/ffmpeg-5.1-linux-gnu-64bit-build.tar.bz2) (Generic Linux x86_64)
-    * [ffmpeg-5.1-linux-gnu-32bit-build.deb](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1/ffmpeg-5.1-linux-gnu-32bit-build.deb) (Debian/Ubuntu x86)
-    * [ffmpeg-5.1-linux-gnu-64bit-build.deb](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1/ffmpeg-5.1-linux-gnu-64bit-build.deb) (Debian/Ubuntu x86_64)
-    * [ffmpeg-5.1-linux-gnu-32bit-build.rpm](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1/ffmpeg-5.1-linux-gnu-32bit-build.rpm) (RedHat/Fedora x86)
-    * [ffmpeg-5.1-linux-gnu-64bit-build.rpm](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1/ffmpeg-5.1-linux-gnu-64bit-build.rpm) (RedHat/Fedora x86_64)
-    * [ffmpeg-av-5.1-linux-gnu-64bit-build.pkg.tar.zst](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1/ffmpeg-av-5.1-linux-gnu-64bit-build.pkg.tar.zst) (Arch x86_64)
+    * [ffmpeg-5.1.1-linux-gnu-32bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1.1/ffmpeg-5.1.1-linux-gnu-32bit-build.tar.bz2) (Generic Linux x86)
+    * [ffmpeg-5.1.1-linux-gnu-64bit-build.tar.bz2](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1.1/ffmpeg-5.1.1-linux-gnu-64bit-build.tar.bz2) (Generic Linux x86_64)
+    * [ffmpeg-5.1.1-linux-gnu-32bit-build.deb](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1.1/ffmpeg-5.1.1-linux-gnu-32bit-build.deb) (Debian/Ubuntu x86)
+    * [ffmpeg-5.1.1-linux-gnu-64bit-build.deb](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1.1/ffmpeg-5.1.1-linux-gnu-64bit-build.deb) (Debian/Ubuntu x86_64)
+    * [ffmpeg-5.1.1-linux-gnu-32bit-build.rpm](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1.1/ffmpeg-5.1.1-linux-gnu-32bit-build.rpm) (RedHat/Fedora x86)
+    * [ffmpeg-5.1.1-linux-gnu-64bit-build.rpm](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1.1/ffmpeg-5.1.1-linux-gnu-64bit-build.rpm) (RedHat/Fedora x86_64)
        
   * **`Windows downloads (Shared):`**
   
-    * [ffmpeg-5.1-win-32bit-build.zip](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1/ffmpeg-5.1-win-32bit-build.zip)
-    * [ffmpeg-5.1-win-64bit-build.zip](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1/ffmpeg-5.1-win-64bit-build.zip)
-
-_Note: The binaries in `Arch` have been renamed to `ffmpeg-av` and `ffprobe-av` to avoid conflicts with the package and repository dependencies._
+    * [ffmpeg-5.1.1-win-32bit-build.zip](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1.1/ffmpeg-5.1.1-win-32bit-build.zip)
+    * [ffmpeg-5.1.1-win-64bit-build.zip](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1.1/ffmpeg-5.1.1-win-64bit-build.zip)
 
 ### HOW TO INSTALL:
 
   * **GNU/Linux instructions:**
 
-    * Download the package ([32 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1/ffmpeg-5.1-linux-gnu-32bit-build.tar.bz2) or [64 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1/ffmpeg-5.1-linux-gnu-64bit-build.tar.bz2)).
+    * Download the package ([32 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1.1/ffmpeg-5.1.1-linux-gnu-32bit-build.tar.bz2) or [64 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1.1/ffmpeg-5.1.1-linux-gnu-64bit-build.tar.bz2)).
     * Open the terminal and type the following command:
     
       ```shell
-      $ sudo tar jxvf ffmpeg-5.1-linux-gnu-[arch]-build.tar.bz2 -C /
+      $ sudo tar jxvf ffmpeg-5.1.1-linux-gnu-[arch]-build.tar.bz2 -C /
       ```
     
     _Note: Replace `[arch]` with `32bit` or `64bit` depending on your architecture._
       
   * **Windows instructions:**
     
-    * Download the package ([32 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1/ffmpeg-5.1-win-32bit-build.zip) or [64 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1/ffmpeg-5.1-win-64bit-build.zip)).
+    * Download the package ([32 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1.1/ffmpeg-5.1.1-win-32bit-build.zip) or [64 bits](https://github.com/q3aql/ffmpeg-builds/releases/download/v5.1.1/ffmpeg-5.1.1-win-64bit-build.zip)).
     * Unzip the package with [7-zip](http://www.7-zip.org/) or [Winrar](http://www.rarlab.com/).
     * Copy the files to a folder. For example: `C:\Program Files\FFmpeg`
     * Add the path `C:\Program Files\FFmpeg` to [PATH](https://www.google.es/search?q=add+folder+to+PATH+on+Windows) variable.
